@@ -16,6 +16,9 @@
 		15541B952A331494000F23C5 /* LittleLemonIOSCapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541B942A331494000F23C5 /* LittleLemonIOSCapstoneTests.swift */; };
 		15541B9F2A331495000F23C5 /* LittleLemonIOSCapstoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541B9E2A331495000F23C5 /* LittleLemonIOSCapstoneUITests.swift */; };
 		15541BA12A331495000F23C5 /* LittleLemonIOSCapstoneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541BA02A331495000F23C5 /* LittleLemonIOSCapstoneUITestsLaunchTests.swift */; };
+		15541BAE2A344865000F23C5 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541BAD2A344865000F23C5 /* Onboarding.swift */; };
+		15541BB02A345CC7000F23C5 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541BAF2A345CC7000F23C5 /* Home.swift */; };
+		15541BB22A345DFC000F23C5 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541BB12A345DFC000F23C5 /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		15541B9A2A331495000F23C5 /* LittleLemonIOSCapstoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LittleLemonIOSCapstoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15541B9E2A331495000F23C5 /* LittleLemonIOSCapstoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLemonIOSCapstoneUITests.swift; sourceTree = "<group>"; };
 		15541BA02A331495000F23C5 /* LittleLemonIOSCapstoneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLemonIOSCapstoneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		15541BAD2A344865000F23C5 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		15541BAF2A345CC7000F23C5 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		15541BB12A345DFC000F23C5 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,9 @@
 				15541B872A331494000F23C5 /* Persistence.swift */,
 				15541B892A331494000F23C5 /* LittleLemonIOSCapstone.xcdatamodeld */,
 				15541B842A331494000F23C5 /* Preview Content */,
+				15541BAD2A344865000F23C5 /* Onboarding.swift */,
+				15541BAF2A345CC7000F23C5 /* Home.swift */,
+				15541BB12A345DFC000F23C5 /* Menu.swift */,
 			);
 			path = LittleLemonIOSCapstone;
 			sourceTree = "<group>";
@@ -265,7 +274,10 @@
 			files = (
 				15541B8B2A331494000F23C5 /* LittleLemonIOSCapstone.xcdatamodeld in Sources */,
 				15541B882A331494000F23C5 /* Persistence.swift in Sources */,
+				15541BB22A345DFC000F23C5 /* Menu.swift in Sources */,
+				15541BAE2A344865000F23C5 /* Onboarding.swift in Sources */,
 				15541B812A331493000F23C5 /* ContentView.swift in Sources */,
+				15541BB02A345CC7000F23C5 /* Home.swift in Sources */,
 				15541B7F2A331493000F23C5 /* LittleLemonIOSCapstoneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
