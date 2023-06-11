@@ -15,9 +15,9 @@ struct Home: View {
                     Label("Menu", systemImage: "list.dash")
                 })
             
-            Text("This is the Trash View")
+            UserProfile()
                 .tabItem({
-                    Label("", systemImage: "trash")
+                    Label("Profile", systemImage: "square.and.pencil")
                 })
         }
         .navigationBarBackButtonHidden(true)

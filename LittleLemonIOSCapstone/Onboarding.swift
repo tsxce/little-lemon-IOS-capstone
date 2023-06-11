@@ -9,9 +9,14 @@ import SwiftUI
 
 struct Onboarding: View {
     @State var isLoggedIn = false
-    let kFirstName = "first name key"
-    let kLastName = "last name key"
-    let kEmail = "email key"
+//    let kFirstName = "first name key"
+//    let kLastName = "last name key"
+//    let kEmail = "email key"
+//    let kIsLoggedIn = "kIsLoggedIn"
+    var kFirstName = UserDefaults.standard.string(forKey: "kFirstName")
+    var kLastName = UserDefaults.standard.string(forKey: "kLastName")
+    var kEmail = UserDefaults.standard.string(forKey: "kEmail")
+    let kIsLoggedIn = UserDefaults.standard.string(forKey: "kIsLoggedIn")
     @State var firstName = ""
     @State var lastName = ""
     @State var email = ""
@@ -22,16 +27,19 @@ struct Onboarding: View {
             VStack {
                 NavigationLink(destination: Home(), isActive: $isLoggedIn) {
                     EmptyView()
+                }.onAppear() {
+                    if(kIsLoggedIn == "true") {
+                        isLoggedIn = true
+                    }
                 }
                 HStack{
-                    Text("NAME: ")
+                    Text("First Name: ")
                         .font(.subheadline)
                     TextField("Your first name...",
                               text: $firstName)
-                    
                 }
                 HStack{
-                    Text("PHONE: ")
+                    Text("Last Name: ")
                         .font(.subheadline)
                     
                     TextField("Your last name...",
@@ -65,31 +73,16 @@ struct Onboarding: View {
     }
     
     private func validateFunc() {
-//        var invalidFirstNameMessage = ""
-//        if(firstName.isEmpty) {
-//            invalidFirstNameMessage = "First names can only contain letters and must have at least 3 characters\n\n"
-//        }
-//        var invalidLastNameMessage = ""
-//        if(lastName.isEmpty) {
-//            invalidLastNameMessage = "Last names can only contain letters and must have at least 3 characters\n\n"
-//        }
-//        var invalidEmailMessage = ""
-//        if(lastName.isEmpty) {
-//            invalidEmailMessage = "Email can only contain letters and must have at least 3 characters\n\n"
-//        }
-//        self.errorMessage = "Found these errors in the form:\n\n \(invalidFirstNameMessage)\(invalidLastNameMessage)\(invalidEmailMessage)"
-//
-//        showFormInvalidMessage.toggle()
-        
-        
         var invalidFirstNameMessage = ""
         if(firstName.isEmpty || lastName.isEmpty || lastName.isEmpty) {
             invalidFirstNameMessage = "First names can only contain letters and must have at least 3 characters\n\n"
         } else {
-            UserDefaults.standard.set(firstName, forKey: kFirstName)
-            UserDefaults.standard.set(lastName, forKey: kLastName)
-            UserDefaults.standard.set(email, forKey: kEmail)
+            UserDefaults.standard.set(firstName, forKey: "kFirstName")
+            UserDefaults.standard.set(lastName, forKey: "kLastName")
+            UserDefaults.standard.set(email, forKey: "kEmail")
             isLoggedIn = true
+            UserDefaults.standard.set(isLoggedIn, forKey: "kIsLoggedIn")
+
         }
         return
     }

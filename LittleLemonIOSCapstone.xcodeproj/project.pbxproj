@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15334BA72A359B520060EDE2 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15334BA62A359B520060EDE2 /* MenuItem.swift */; };
+		15334BA92A359BAE0060EDE2 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15334BA82A359BAE0060EDE2 /* MenuList.swift */; };
 		15541B7F2A331493000F23C5 /* LittleLemonIOSCapstoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541B7E2A331493000F23C5 /* LittleLemonIOSCapstoneApp.swift */; };
 		15541B812A331493000F23C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541B802A331493000F23C5 /* ContentView.swift */; };
 		15541B832A331494000F23C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15541B822A331494000F23C5 /* Assets.xcassets */; };
@@ -19,6 +21,7 @@
 		15541BAE2A344865000F23C5 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541BAD2A344865000F23C5 /* Onboarding.swift */; };
 		15541BB02A345CC7000F23C5 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541BAF2A345CC7000F23C5 /* Home.swift */; };
 		15541BB22A345DFC000F23C5 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541BB12A345DFC000F23C5 /* Menu.swift */; };
+		15541BB42A358235000F23C5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541BB32A358235000F23C5 /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15334BA62A359B520060EDE2 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		15334BA82A359BAE0060EDE2 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
 		15541B7B2A331493000F23C5 /* LittleLemonIOSCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleLemonIOSCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15541B7E2A331493000F23C5 /* LittleLemonIOSCapstoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLemonIOSCapstoneApp.swift; sourceTree = "<group>"; };
 		15541B802A331493000F23C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +59,7 @@
 		15541BAD2A344865000F23C5 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		15541BAF2A345CC7000F23C5 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		15541BB12A345DFC000F23C5 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		15541BB32A358235000F23C5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,9 @@
 				15541BAD2A344865000F23C5 /* Onboarding.swift */,
 				15541BAF2A345CC7000F23C5 /* Home.swift */,
 				15541BB12A345DFC000F23C5 /* Menu.swift */,
+				15541BB32A358235000F23C5 /* UserProfile.swift */,
+				15334BA62A359B520060EDE2 /* MenuItem.swift */,
+				15334BA82A359BAE0060EDE2 /* MenuList.swift */,
 			);
 			path = LittleLemonIOSCapstone;
 			sourceTree = "<group>";
@@ -276,8 +285,11 @@
 				15541B882A331494000F23C5 /* Persistence.swift in Sources */,
 				15541BB22A345DFC000F23C5 /* Menu.swift in Sources */,
 				15541BAE2A344865000F23C5 /* Onboarding.swift in Sources */,
+				15541BB42A358235000F23C5 /* UserProfile.swift in Sources */,
 				15541B812A331493000F23C5 /* ContentView.swift in Sources */,
+				15334BA72A359B520060EDE2 /* MenuItem.swift in Sources */,
 				15541BB02A345CC7000F23C5 /* Home.swift in Sources */,
+				15334BA92A359BAE0060EDE2 /* MenuList.swift in Sources */,
 				15541B7F2A331493000F23C5 /* LittleLemonIOSCapstoneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
