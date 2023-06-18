@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct MenuItem: Decodable, Identifiable {
-    var id = UUID()
+//If here is ID UUID, it would be error. WHY?
+struct MenuItem: Decodable {
     let title: String
     let price: String
     let image: String
+    let description: String
+    let category: String
 }

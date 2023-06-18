@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1515CD782A3F6F91003E8A82 /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1515CD772A3F6F91003E8A82 /* FetchedObjects.swift */; };
 		15334BA72A359B520060EDE2 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15334BA62A359B520060EDE2 /* MenuItem.swift */; };
 		15334BA92A359BAE0060EDE2 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15334BA82A359BAE0060EDE2 /* MenuList.swift */; };
+		15334BAE2A3763530060EDE2 /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15334BAC2A3763530060EDE2 /* ExampleDatabase.xcdatamodeld */; };
+		15334BB02A37EF4F0060EDE2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15334BAF2A37EF4F0060EDE2 /* Persistence.swift */; };
 		15541B7F2A331493000F23C5 /* LittleLemonIOSCapstoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541B7E2A331493000F23C5 /* LittleLemonIOSCapstoneApp.swift */; };
-		15541B812A331493000F23C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541B802A331493000F23C5 /* ContentView.swift */; };
 		15541B832A331494000F23C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15541B822A331494000F23C5 /* Assets.xcassets */; };
 		15541B862A331494000F23C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15541B852A331494000F23C5 /* Preview Assets.xcassets */; };
-		15541B882A331494000F23C5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541B872A331494000F23C5 /* Persistence.swift */; };
 		15541B8B2A331494000F23C5 /* LittleLemonIOSCapstone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15541B892A331494000F23C5 /* LittleLemonIOSCapstone.xcdatamodeld */; };
 		15541B952A331494000F23C5 /* LittleLemonIOSCapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541B942A331494000F23C5 /* LittleLemonIOSCapstoneTests.swift */; };
 		15541B9F2A331495000F23C5 /* LittleLemonIOSCapstoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15541B9E2A331495000F23C5 /* LittleLemonIOSCapstoneUITests.swift */; };
@@ -42,14 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1515CD772A3F6F91003E8A82 /* FetchedObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
 		15334BA62A359B520060EDE2 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		15334BA82A359BAE0060EDE2 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
+		15334BAD2A3763530060EDE2 /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
+		15334BAF2A37EF4F0060EDE2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		15541B7B2A331493000F23C5 /* LittleLemonIOSCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleLemonIOSCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15541B7E2A331493000F23C5 /* LittleLemonIOSCapstoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLemonIOSCapstoneApp.swift; sourceTree = "<group>"; };
-		15541B802A331493000F23C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		15541B822A331494000F23C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15541B852A331494000F23C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		15541B872A331494000F23C5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		15541B8A2A331494000F23C5 /* LittleLemonIOSCapstone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LittleLemonIOSCapstone.xcdatamodel; sourceTree = "<group>"; };
 		15541B902A331494000F23C5 /* LittleLemonIOSCapstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LittleLemonIOSCapstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15541B942A331494000F23C5 /* LittleLemonIOSCapstoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLemonIOSCapstoneTests.swift; sourceTree = "<group>"; };
@@ -111,9 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				15541B7E2A331493000F23C5 /* LittleLemonIOSCapstoneApp.swift */,
-				15541B802A331493000F23C5 /* ContentView.swift */,
 				15541B822A331494000F23C5 /* Assets.xcassets */,
-				15541B872A331494000F23C5 /* Persistence.swift */,
 				15541B892A331494000F23C5 /* LittleLemonIOSCapstone.xcdatamodeld */,
 				15541B842A331494000F23C5 /* Preview Content */,
 				15541BAD2A344865000F23C5 /* Onboarding.swift */,
@@ -122,6 +122,9 @@
 				15541BB32A358235000F23C5 /* UserProfile.swift */,
 				15334BA62A359B520060EDE2 /* MenuItem.swift */,
 				15334BA82A359BAE0060EDE2 /* MenuList.swift */,
+				15334BAC2A3763530060EDE2 /* ExampleDatabase.xcdatamodeld */,
+				15334BAF2A37EF4F0060EDE2 /* Persistence.swift */,
+				1515CD772A3F6F91003E8A82 /* FetchedObjects.swift */,
 			);
 			path = LittleLemonIOSCapstone;
 			sourceTree = "<group>";
@@ -281,15 +284,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15334BB02A37EF4F0060EDE2 /* Persistence.swift in Sources */,
+				15334BAE2A3763530060EDE2 /* ExampleDatabase.xcdatamodeld in Sources */,
 				15541B8B2A331494000F23C5 /* LittleLemonIOSCapstone.xcdatamodeld in Sources */,
-				15541B882A331494000F23C5 /* Persistence.swift in Sources */,
 				15541BB22A345DFC000F23C5 /* Menu.swift in Sources */,
 				15541BAE2A344865000F23C5 /* Onboarding.swift in Sources */,
 				15541BB42A358235000F23C5 /* UserProfile.swift in Sources */,
-				15541B812A331493000F23C5 /* ContentView.swift in Sources */,
 				15334BA72A359B520060EDE2 /* MenuItem.swift in Sources */,
 				15541BB02A345CC7000F23C5 /* Home.swift in Sources */,
 				15334BA92A359BAE0060EDE2 /* MenuList.swift in Sources */,
+				1515CD782A3F6F91003E8A82 /* FetchedObjects.swift in Sources */,
 				15541B7F2A331493000F23C5 /* LittleLemonIOSCapstoneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,6 +615,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		15334BAC2A3763530060EDE2 /* ExampleDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				15334BAD2A3763530060EDE2 /* ExampleDatabase.xcdatamodel */,
+			);
+			currentVersion = 15334BAD2A3763530060EDE2 /* ExampleDatabase.xcdatamodel */;
+			path = ExampleDatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		15541B892A331494000F23C5 /* LittleLemonIOSCapstone.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
