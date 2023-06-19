@@ -10,12 +10,57 @@ import SwiftUI
 struct Menu: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State var searchText = ""
+    @State var category = ""
     var body: some View {
         VStack {
-            Text("APP TITLE")
-            Text("Tokyo")
-            Text("a short description of the whole application below the previous two fields. ")
-            TextField("Search menu",  text: $searchText)
+            HeaderView()
+            VStack(spacing: 0) {
+                HeroView()
+                    .padding([.top, .bottom], 0)
+                TextField("Search menu",  text: $searchText)
+                    .background(Color.mint)
+                    .padding([.top, .bottom], 0)
+            }
+            VStack {
+                Text("ORDER FOR DELIVERY!")
+                    .padding([.leading], 15)
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                HStack {
+                    Text("Starters")
+                        .padding([.top, .bottom, .leading, .trailing], 15)
+                        .background(Color.gray)
+                        .cornerRadius(20)
+                        .onTapGesture {
+                            self.searchText = ""
+                            self.category = "starters"
+                        }
+                    Text("Mains")
+                        .padding([.top, .bottom, .leading, .trailing], 15)
+                        .background(Color.gray)
+                        .cornerRadius(20)
+                        .onTapGesture {
+                            self.searchText = ""
+                            self.category = "mains"
+                        }
+                    Text("Desserts")
+                        .padding([.top, .bottom, .leading, .trailing], 15)
+                        .background(Color.gray)
+                        .cornerRadius(20)
+                        .onTapGesture {
+                            self.searchText = ""
+                            self.category = "desserts"
+                        }
+                    Text("Drinks")
+                        .padding([.top, .bottom, .leading, .trailing], 15)
+                        .background(Color.gray)
+                        .cornerRadius(20)
+                        .onTapGesture {
+                            self.searchText = ""
+                            self.category = "drinks"
+                        }
+                }
+            }
             FetchedObjects(predicate:buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
                 List {
                     ForEach(dishes) { dish in
@@ -47,6 +92,7 @@ struct Menu: View {
                     newDish.title = menuItem.title
                     newDish.image = menuItem.image
                     newDish.price = menuItem.price
+                    newDish.category = menuItem.category
                 }
                 try? viewContext.save()
             } else {
@@ -60,6 +106,20 @@ struct Menu: View {
     }
     
     func buildPredicate() -> NSPredicate{
+        if category != "" {
+            switch category {
+                case "starters":
+                    return NSPredicate(format: "category CONTAINS[cd] %@", "starters")
+                case "desserts":
+                    return NSPredicate(format: "category CONTAINS[cd] %@", "desserts")
+                case "mains":
+                    return NSPredicate(format: "category CONTAINS[cd] %@", "mains")
+            case "drinks":
+                return NSPredicate(format: "category CONTAINS[cd] %@", "drinks")
+                default:
+                    return NSPredicate(format: "category CONTAINS[cd] %@", "starters")
+            }
+        }
         if searchText == "" {
             return NSPredicate(value: true)
         }

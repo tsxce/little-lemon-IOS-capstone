@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1515CD782A3F6F91003E8A82 /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1515CD772A3F6F91003E8A82 /* FetchedObjects.swift */; };
+		1515CD7A2A40D94F003E8A82 /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1515CD792A40D94F003E8A82 /* HeroView.swift */; };
+		1515CD7C2A40D960003E8A82 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1515CD7B2A40D960003E8A82 /* HeaderView.swift */; };
 		15334BA72A359B520060EDE2 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15334BA62A359B520060EDE2 /* MenuItem.swift */; };
 		15334BA92A359BAE0060EDE2 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15334BA82A359BAE0060EDE2 /* MenuList.swift */; };
 		15334BAE2A3763530060EDE2 /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15334BAC2A3763530060EDE2 /* ExampleDatabase.xcdatamodeld */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		1515CD772A3F6F91003E8A82 /* FetchedObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
+		1515CD792A40D94F003E8A82 /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
+		1515CD7B2A40D960003E8A82 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		15334BA62A359B520060EDE2 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		15334BA82A359BAE0060EDE2 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
 		15334BAD2A3763530060EDE2 /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 				15334BAC2A3763530060EDE2 /* ExampleDatabase.xcdatamodeld */,
 				15334BAF2A37EF4F0060EDE2 /* Persistence.swift */,
 				1515CD772A3F6F91003E8A82 /* FetchedObjects.swift */,
+				1515CD792A40D94F003E8A82 /* HeroView.swift */,
+				1515CD7B2A40D960003E8A82 /* HeaderView.swift */,
 			);
 			path = LittleLemonIOSCapstone;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 			files = (
 				15334BB02A37EF4F0060EDE2 /* Persistence.swift in Sources */,
 				15334BAE2A3763530060EDE2 /* ExampleDatabase.xcdatamodeld in Sources */,
+				1515CD7A2A40D94F003E8A82 /* HeroView.swift in Sources */,
 				15541B8B2A331494000F23C5 /* LittleLemonIOSCapstone.xcdatamodeld in Sources */,
 				15541BB22A345DFC000F23C5 /* Menu.swift in Sources */,
 				15541BAE2A344865000F23C5 /* Onboarding.swift in Sources */,
@@ -295,6 +302,7 @@
 				15334BA92A359BAE0060EDE2 /* MenuList.swift in Sources */,
 				1515CD782A3F6F91003E8A82 /* FetchedObjects.swift in Sources */,
 				15541B7F2A331493000F23C5 /* LittleLemonIOSCapstoneApp.swift in Sources */,
+				1515CD7C2A40D960003E8A82 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
