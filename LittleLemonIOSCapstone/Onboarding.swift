@@ -32,43 +32,72 @@ struct Onboarding: View {
                         isLoggedIn = true
                     }
                 }
-                HStack{
-                    Text("First Name: ")
-                        .font(.subheadline)
-                    TextField("Your first name...",
-                              text: $firstName)
+                HeaderView()
+                HeroView()
+                VStack {
+                    VStack{
+                        Text("First Name *")
+                            .font(.system(size: 22))
+                            .font(.subheadline)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        TextField("Your first name...",
+                                  text: $firstName)
+                        .padding(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(.gray, lineWidth: 2)
+                        )
+                    }
+                    Spacer()
+                        .frame(height:20)
+                    VStack{
+                        Text("Last Name *")
+                            .font(.system(size: 22))
+                            .font(.subheadline)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        TextField("Your last name...",
+                                  text: $lastName)
+                        .padding(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(.gray, lineWidth: 2)
+                        )
+                    }
+                    Spacer()
+                        .frame(height:20)
+                    VStack{
+                        Text("E-MAIL *")
+                            .font(.system(size: 22))
+                            .font(.subheadline)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        TextField("Your e-mail...",
+                                  text: $email)
+                        .keyboardType(.emailAddress)
+                        .textContentType(.emailAddress)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                        .padding(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(.gray, lineWidth: 2)
+                        )
+                    }
+                    Spacer()
+                        .frame(height:20)
+                    Button(action: {
+                        validateFunc()
+                    }, label: {
+                        Text("Register")
+                    })
+                    .padding(.init(top: 10, leading: 30, bottom: 10, trailing: 30))
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(20)
+                    .padding(.top, 10)
                 }
-                HStack{
-                    Text("Last Name: ")
-                        .font(.subheadline)
-                    
-                    TextField("Your last name...",
-                              text: $lastName)
-                    .textContentType(.telephoneNumber)
-                    .keyboardType(.phonePad)
-                }
-                HStack{
-                    Text("E-MAIL: ")
-                        .font(.subheadline)
-                    TextField("Your e-mail...",
-                              text: $email)
-                    .keyboardType(.emailAddress)
-                    .textContentType(.emailAddress)
-                    .disableAutocorrection(true)
-                    .autocapitalization(.none)
-                }
-                
-                Button(action: {
-                    validateFunc()
-                }, label: {
-                    Text("Register")
-                })
-                .padding(.init(top: 10, leading: 30, bottom: 10, trailing: 30))
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(20)
-                .padding(.top, 10)
+                .padding([.leading, .trailing], 20)
             }
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
         }
     }
     

@@ -12,122 +12,123 @@ struct Menu: View {
     @State var searchText = ""
     @State var category = ""
     var body: some View {
-        VStack {
-            HeaderView()
-            HeroView()
-            Spacer()
-                    .frame(height: 0)
-            ZStack(alignment: .leading) {
-                TextField("", text: $searchText)
-                    .padding(7)
-                    .padding(.horizontal, 25)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(8)
-                    .padding(15)
-                    .background(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
-                Button(action: {
-                    //Some button action
-                    FetchedObjects(predicate:buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
-                        List {
-                            ForEach(dishes) { dish in
-                                HStack {
-                                    Text(dish.title ?? "")
-                                    Text(dish.price ?? "")
+
+            VStack {
+                HeaderView()
+                HeroView()
+                Spacer()
+                        .frame(height: 0)
+                ZStack(alignment: .leading) {
+                    TextField("", text: $searchText)
+                        .padding(7)
+                        .padding(.horizontal, 25)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
+                        .padding(15)
+                        .background(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                    Button(action: {
+                        //Some button action
+                        FetchedObjects(predicate:buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
+                            List {
+                                ForEach(dishes) { dish in
+                                    HStack {
+                                        Text(dish.title ?? "")
+                                        Text(dish.price ?? "")
+                                    }
                                 }
                             }
                         }
+                    }) {
+                        Image(systemName: "magnifyingglass")
                     }
-                }) {
-                    Image(systemName: "magnifyingglass")
+                    .frame(width: 35, height: 35)
+                    .padding(.leading, 20)
                 }
-                .frame(width: 35, height: 35)
-                .padding(.leading, 20)
-            }
-            VStack {
-                Text("ORDER FOR DELIVERY!")
-                    .padding([.leading], 15)
-                    .bold()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                HStack {
-                    Text("Starters")
+                VStack {
+                    Text("ORDER FOR DELIVERY!")
+                        .padding([.leading], 15)
                         .bold()
-                        .padding([.top, .bottom, .leading, .trailing], 12)
-                        .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(20)
-                        .onTapGesture {
-                            self.searchText = ""
-                            self.category = "starters"
-                        }
-                    Text("Mains")
-                        .bold()
-                        .padding([.top, .bottom, .leading, .trailing], 12)
-                        .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(20)
-                        .onTapGesture {
-                            self.searchText = ""
-                            self.category = "mains"
-                        }
-                    Text("Desserts")
-                        .bold()
-                        .padding([.top, .bottom, .leading, .trailing], 12)
-                        .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(20)
-                        .onTapGesture {
-                            self.searchText = ""
-                            self.category = "desserts"
-                        }
-                    Text("Drinks")
-                        .bold()
-                        .padding([.top, .bottom, .leading, .trailing], 12)
-                        .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(20)
-                        .onTapGesture {
-                            self.searchText = ""
-                            self.category = "drinks"
-                        }
-                }
-            }
-            .padding([.bottom], 5)
-            Divider()
-             .frame(height: 1)
-             .background(Color.gray)
-            FetchedObjects(predicate:buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
-                List {
-                    ForEach(dishes) { dish in
-                        HStack {
-                            VStack {
-                                Text(dish.title ?? "")
-                                    .bold()
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                Text(dish.desc ?? "")
-                                    .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding([.top, .bottom], 6)
-                                let priceStr = "$ " + (dish.price ?? "")
-                                Text(priceStr)
-                                    .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
-                                    .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    HStack {
+                        Text("Starters")
+                            .bold()
+                            .padding([.top, .bottom, .leading, .trailing], 12)
+                            .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(20)
+                            .onTapGesture {
+                                self.searchText = ""
+                                self.category = "starters"
                             }
-                            AsyncImage(url: URL(string: dish.image ?? "")) { image in
-                                image.resizable()
-                            } placeholder: {
-                                ProgressView()
+                        Text("Mains")
+                            .bold()
+                            .padding([.top, .bottom, .leading, .trailing], 12)
+                            .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(20)
+                            .onTapGesture {
+                                self.searchText = ""
+                                self.category = "mains"
                             }
-                            .frame(width: 100, height: 100)
-                        }
-                        .padding([.top, .bottom], 10)
+                        Text("Desserts")
+                            .bold()
+                            .padding([.top, .bottom, .leading, .trailing], 12)
+                            .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(20)
+                            .onTapGesture {
+                                self.searchText = ""
+                                self.category = "desserts"
+                            }
+                        Text("Drinks")
+                            .bold()
+                            .padding([.top, .bottom, .leading, .trailing], 12)
+                            .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(20)
+                            .onTapGesture {
+                                self.searchText = ""
+                                self.category = "drinks"
+                            }
                     }
                 }
+                .padding([.bottom], 5)
+                Divider()
+                 .frame(height: 1)
+                 .background(Color.gray)
+                FetchedObjects(predicate:buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
+                    List {
+                        ForEach(dishes) { dish in
+                            HStack {
+                                VStack {
+                                    Text(dish.title ?? "")
+                                        .bold()
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                    Text(dish.desc ?? "")
+                                        .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding([.top, .bottom], 6)
+                                    let priceStr = "$ " + (dish.price ?? "")
+                                    Text(priceStr)
+                                        .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                }
+                                AsyncImage(url: URL(string: dish.image ?? "")) { image in
+                                    image.resizable()
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                .frame(width: 100, height: 100)
+                            }
+                            .padding([.top, .bottom], 10)
+                        }
+                    }
+                }
             }
-        }
-        .padding([.leading, .trailing], 10)
-        .onAppear() {
-            getMenuData()
-        }
+            .padding([.leading, .trailing], 10)
+            .onAppear() {
+                getMenuData()
+            }
     }
     func getMenuData() {
         let persistence = PersistenceController()
