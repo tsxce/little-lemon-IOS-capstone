@@ -14,12 +14,34 @@ struct Menu: View {
     var body: some View {
         VStack {
             HeaderView()
-            VStack(spacing: 0) {
-                HeroView()
-                    .padding([.top, .bottom], 0)
-                TextField("Search menu",  text: $searchText)
-                    .background(Color.mint)
-                    .padding([.top, .bottom], 0)
+            HeroView()
+            Spacer()
+                    .frame(height: 0)
+            ZStack(alignment: .leading) {
+                TextField("", text: $searchText)
+                    .padding(7)
+                    .padding(.horizontal, 25)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(8)
+                    .padding(15)
+                    .background(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                Button(action: {
+                    //Some button action
+                    FetchedObjects(predicate:buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
+                        List {
+                            ForEach(dishes) { dish in
+                                HStack {
+                                    Text(dish.title ?? "")
+                                    Text(dish.price ?? "")
+                                }
+                            }
+                        }
+                    }
+                }) {
+                    Image(systemName: "magnifyingglass")
+                }
+                .frame(width: 35, height: 35)
+                .padding(.leading, 20)
             }
             VStack {
                 Text("ORDER FOR DELIVERY!")
@@ -28,32 +50,40 @@ struct Menu: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 HStack {
                     Text("Starters")
-                        .padding([.top, .bottom, .leading, .trailing], 15)
-                        .background(Color.gray)
+                        .bold()
+                        .padding([.top, .bottom, .leading, .trailing], 12)
+                        .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                        .background(Color.gray.opacity(0.2))
                         .cornerRadius(20)
                         .onTapGesture {
                             self.searchText = ""
                             self.category = "starters"
                         }
                     Text("Mains")
-                        .padding([.top, .bottom, .leading, .trailing], 15)
-                        .background(Color.gray)
+                        .bold()
+                        .padding([.top, .bottom, .leading, .trailing], 12)
+                        .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                        .background(Color.gray.opacity(0.2))
                         .cornerRadius(20)
                         .onTapGesture {
                             self.searchText = ""
                             self.category = "mains"
                         }
                     Text("Desserts")
-                        .padding([.top, .bottom, .leading, .trailing], 15)
-                        .background(Color.gray)
+                        .bold()
+                        .padding([.top, .bottom, .leading, .trailing], 12)
+                        .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                        .background(Color.gray.opacity(0.2))
                         .cornerRadius(20)
                         .onTapGesture {
                             self.searchText = ""
                             self.category = "desserts"
                         }
                     Text("Drinks")
-                        .padding([.top, .bottom, .leading, .trailing], 15)
-                        .background(Color.gray)
+                        .bold()
+                        .padding([.top, .bottom, .leading, .trailing], 12)
+                        .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                        .background(Color.gray.opacity(0.2))
                         .cornerRadius(20)
                         .onTapGesture {
                             self.searchText = ""
@@ -61,17 +91,41 @@ struct Menu: View {
                         }
                 }
             }
+            .padding([.bottom], 5)
+            Divider()
+             .frame(height: 1)
+             .background(Color.gray)
             FetchedObjects(predicate:buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
                 List {
                     ForEach(dishes) { dish in
                         HStack {
-                            Text(dish.title ?? "")
-                            Text(dish.price ?? "")
+                            VStack {
+                                Text(dish.title ?? "")
+                                    .bold()
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                Text(dish.desc ?? "")
+                                    .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding([.top, .bottom], 6)
+                                let priceStr = "$ " + (dish.price ?? "")
+                                Text(priceStr)
+                                    .foregroundColor(Color(hue: 0.158, saturation: 0.14, brightness: 0.26))
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                            AsyncImage(url: URL(string: dish.image ?? "")) { image in
+                                image.resizable()
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            .frame(width: 100, height: 100)
                         }
+                        .padding([.top, .bottom], 10)
                     }
                 }
             }
-        }.onAppear() {
+        }
+        .padding([.leading, .trailing], 10)
+        .onAppear() {
             getMenuData()
         }
     }
@@ -93,6 +147,7 @@ struct Menu: View {
                     newDish.image = menuItem.image
                     newDish.price = menuItem.price
                     newDish.category = menuItem.category
+                    newDish.desc = menuItem.description
                 }
                 try? viewContext.save()
             } else {
